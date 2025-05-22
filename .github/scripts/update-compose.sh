@@ -43,9 +43,9 @@ if [[ -n "${DEPLOYMENT_REPO:-}" ]]; then
   log "Cloning deployment repo..."
   git clone "https://$DEPLOYMENT_TOKEN@$DEPLOYMENT_REPO" deployment
   cd deployment
-  git fetch origin dev
-  git checkout dev || git checkout -b dev "origin/dev"
-  git reset --hard "origin/dev"
+  git fetch origin main
+  git checkout main || git checkout -b main "origin/main"
+  git reset --hard "origin/main"
 else
   log "Error: DEPLOYMENT_REPO is not defined."
   exit 1
