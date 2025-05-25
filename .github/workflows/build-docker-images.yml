@@ -46,7 +46,7 @@ jobs:
           echo "Running vulnerability scan on: $GITHUB_REF"
 
       - name: Run Trivy Vulnerability Scanner
-        uses: aquasecurity/trivy-action@0.28.0
+        uses: aquasecurity/trivy-action@master
         with:
           scan-type: 'fs'
           scanners: 'vuln,secret'
@@ -103,7 +103,7 @@ jobs:
           labels: ${{ steps.metadata.outputs.labels }}
 
       - name: Run Trivy vulnerability scanner on Docker image
-        uses: aquasecurity/trivy-action@0.28.0
+        uses: aquasecurity/trivy-action@master
         with:
           scan-type: 'image'
           image-ref: '${{ steps.metadata.outputs.tags }}'
