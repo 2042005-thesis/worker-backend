@@ -69,8 +69,8 @@ if [[ "$ALLOW_UPDATE" == true ]]; then
   fi
 
   git commit -m "Update image tag to $DOCKER_METADATA_OUTPUT_TAGS"
-  git push origin dev
-  log "Changes pushed to dev."
+  git push origin main
+  log "Changes pushed to main."
 else
   log "Skipping update: ALLOW_UPDATE is not set to true."
   exit 0
