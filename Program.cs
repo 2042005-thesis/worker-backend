@@ -17,6 +17,8 @@ namespace Worker
         {
             try
             {
+                // Ensure the .env file is present in the working directory
+                if (!System.IO.File.Exists(".env"))
                 // Load environment variables from .env file
                 Env.Load();
 
